@@ -17,11 +17,16 @@ void setup() {
 
 void loop() {
   matrix.clear();
-  //matrix.fillRect(0, 0, 8, 8, Wheel(pot/4));
-  matrix.drawPixel(0,0, matrix.Color(255,0,0)); //red
+  matrix.drawPixel(0,0, matrix.Color(255,0,0)); //red pixel top left
   matrix.show();
   delay(20);
 }
+
+
+
+
+
+
 
 
 //////////////////////
@@ -32,7 +37,7 @@ void loop() {
 
 // Input a value 0 to 255 to get a color value.
 // The colours are a transition r - g - b - back to r.
-uint32_t Wheel(byte WheelPos) {
+uint32_t Spectrum(byte WheelPos) {
   WheelPos = 255 - WheelPos;
   if(WheelPos < 85) {
     return matrix.Color(255 - WheelPos * 3, 0, WheelPos * 3);
